@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Progica{% endblock %}
+
+{% block body %}
+    <div class="flex-fill d-flex flex-row justify-content-center align-items-start">
+        <div>
+            {{ include('partials/_sidebar.html.twig') }}
+        </div>
+        <div class="flex-fill d-flex flex-column justify-content-center align-items-center m-20">
+            <h1>Presentation de nos Gites</h1>
+            <div class="d-flex flex-row-nowrap m-20">
+                <ul class="d-flex flex-row-wrap justify-content-center ">
+                    {% for gites in gites %}
+                        <li class="gitebox d-flex flex-column justify-content-center align-items-center m-10" >
+                                <a href="{{ path ('gite', { 'id': gites.id }) }}">
+                                    <img src="{{ gites.image }}" alt="image_de_gite">
+                                    <div class="d-flex flex-column justify-content-center align-items-center m-5">
+                                        <span>{{ gites.nom }}</span>
+                                        <span>{{ gites.surface }}</span>
+                                    </div>
+                                </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
