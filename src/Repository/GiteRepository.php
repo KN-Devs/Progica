@@ -39,6 +39,8 @@ class GiteRepository extends ServiceEntityRepository
         }
     }
 
+    
+
 //    /**
 //     * @return Gite[] Returns an array of Gite objects
 //     */
